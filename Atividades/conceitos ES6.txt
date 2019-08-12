@@ -1,0 +1,169 @@
+// //Decima aula
+// //Sintaxe curta de objeto
+// const nome = 'Diego';
+// const idade = 23;
+
+// const usuario = {
+//     nome,
+//     idade,
+//     empresa: 'Rocketseat',
+// };
+// console.log(usuario);
+________________________________________________________________________________________________________
+//Nona aula
+//Template literals
+// const nome = 'Diego';
+// const idade = 23;
+// console.log(`Meu nome é ${nome} e tenho ${idade} anos`);
+________________________________________________________________________________________________________
+//Oitava aula
+// //REST
+// //Adiciona o resto(os outros valores que não são da variavel escolhida principalmente)
+
+// function soma(...params){
+//     return params.reduce((total, next) => total + next);
+//     //Utiliza o REST para fazer variaveis ilimitadas, porém salva como array, depois utiliza o reduce para andar o array e salvar apenas uma variavel a cada passo, setado pela Arrow Function '=>' com o valor 'total' para andar todo e 'next' passando de um por um.
+// }
+// console.log(soma(1, 3, 4, 4, 5, 6, 7));
+
+// //SPREAD
+
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+// const arr3 = [ ...arr1, ...arr2];
+// console.log(arr3)
+
+// const usuario1 = {
+//     nome: 'Diego',
+//     idade: 23,
+//     empresa: 'Rocketseat'
+// };
+
+// const usuario2 = { ...usuario1, nome: 'Gabriel'}; //Altera apenas um valor
+// console.log(usuario2);
+
+
+// const arr = [1, 2, 3, 4];
+// const [a, b, ...c ] = arr;
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+// const usuario = {
+//     nome: 'Diego',
+//     idade: 23,
+//     empresa: 'Rocketseat'
+// };
+
+// const {nome, ...resto} = usuario;
+// console.log(nome);
+// console.log(resto);
+________________________________________________________________________________________________________
+//Setima aula
+// const usuario = {
+//     nome: 'Diego',
+//     idade: 23,
+//     endereco: {
+//         cidade: 'Rio do Sul',
+//         estado: 'SC'
+//     },
+// };
+// //-------MANEIRA ANTIGA-----
+// // const nome = usuario.nome;
+// // const idade = usuario.idade;
+// // const cidade = usuario.endereco.cidade;
+// //-----------------------
+// //----MANEIRA NOVA----
+// const {nome, idade, endereco: {cidade, estado}} = usuario;
+// console.log(nome);
+// console.log(idade);
+// console.log(cidade);
+// console.log(estado);
+// //--------------------
+// //OU
+// function mostraNome(/*usuario*/ {nome, idade}){
+//     console.log(nome, idade)
+// }
+// mostraNome(usuario);
+________________________________________________________________________________________________________
+//Sexta aula
+// const soma = (a = 3, b = 6) => a + b
+
+// console.log(soma(1));
+// console.log(soma());
+
+________________________________________________________________________________________________________
+//Quinta aula
+// const arr = [1, 3, 4, 5, 6];
+
+// const newArr = arr.map(item => item * 2);  
+
+// console.log(newArr);
+
+// const teste = () => ({nome: 'Diego'});
+// console.log(teste());
+________________________________________________________________________________________________________
+//Quarta aula 
+// const arr = [1, 3, 4, 5, 8, 9];
+
+// const newArr = arr.map(function(item, index){
+// return item + index;
+// // map percore o vetor passando por todas as posições
+// });
+// console.log(newArr);
+
+// const sum = arr.reduce(function(total, next){
+//     return total + next;
+// // percorre o vetor e retorna apenas uma variavel
+// // nesse caso soma o total de cada item e passa para o proximo
+// });
+// console.log(sum)
+
+// const filter = arr.filter(function(item){
+//     return item % 2 === 0;
+// });
+// console.log(filter);
+
+// const find = arr.find(function(item){
+// return item === 4;
+// })
+
+// console.log(find)
+________________________________________________________________________________________________________
+//Terceira aula
+// class Matematica{
+//     static soma(a, b){
+//         return a + b;
+//     }
+// }
+// console.log(Matematica.soma(1,6));
+
+
+// class List{
+//     constructor(){
+//         this.data = [];
+//     }
+//     add(data){
+//         this.data.push(data);
+//         console.log(this.data);
+//     }
+// }
+
+// class TodoList extends List{
+//     constructor(){
+//         super(); //serve para chamar o costructor da classe pai
+//         this.usuario = 'Diego';
+//     }
+//     mostraUsuario(){
+//         console.log(this.usuario)
+//     }
+// }
+
+// const MinhaLista = new TodoList()
+
+// document.getElementById('novotodo').onclick = function(){
+//     MinhaLista.add('Novo todo')
+// }
+
+// MinhaLista.mostraUsuario();
