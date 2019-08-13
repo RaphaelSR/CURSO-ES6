@@ -13,5 +13,5 @@ class Api{
         
     }
 }
-Api.getUserInfo('RaphaelSR');
-Api.getUserInfo('RaphaelSRdsd');
+Api.getUserInfo('RaphaelSR'); //{data: {…}, status: 200, statusText: "OK", headers: {…}, config: {…}, …}
+Api.getUserInfo('RaphaelSRdsd'); //Error
