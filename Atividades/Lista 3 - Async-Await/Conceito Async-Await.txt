@@ -1,0 +1,46 @@
+//ASYNC / AWAIT
+
+const minhaPromise = () => new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('OK')
+    }, 2000);
+});
+
+
+//Async/Await mais limpo  /Modo novo
+//Async function automaticamente se torna uma promisse
+//Await nunca pode estar na frente de uma promisse se não estiver dentro de uma função async.
+
+// async function excecutaPromise() {
+//     // const response = await minhaPromise();
+//     // console.log(response);
+//     console.log(await minhaPromise())
+//     console.log(await minhaPromise())
+//     console.log(await minhaPromise())
+// }
+// excecutaPromise();
+
+//Modo Arrow function
+const executaPromise = async () => {
+    console.log(await minhaPromise())
+    console.log(await minhaPromise())
+    console.log(await minhaPromise())
+}
+
+executaPromise()
+
+//Modo antigo
+// minhaPromise().then(response => {
+//         console.log(response);
+//         minhaPromise().then(response => {
+//             console.log(response);
+//             minhaPromise().then(response => {
+//                 console.log(response);
+//             })
+//         })
+//     })
+//     .catch(err => {
+//     });
+
+
+//minhaPromise().then(response => ...); //Resumo de modo antigo , then representa o await
